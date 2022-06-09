@@ -1,19 +1,11 @@
-<?php
-include_once './conexao.php';
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Cadastrar usuário</title>
-    </head>
-<body>
+<div>
     <h1>Cadastrar</h1>
     <?php
+        //Recebe os dados do formulário
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
+        //Verifica se usuário clicou no botão
         if(!empty($dados['cadUser'])){
-            var_dump($dados);
+            //var_dump($dados); <- mensagem na pagina
             $empty_input = false;
 
             $dados = array_map('trim', $dados);
@@ -59,5 +51,4 @@ include_once './conexao.php';
 
         <input type="submit" value="cadastrar" name="cadUser">
     </form>
-</body>
-</html>
+</div>
