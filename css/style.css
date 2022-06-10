@@ -1,0 +1,16 @@
+.form_title{
+    border: 3px;
+    padding: 15px;
+    
+}
+
+.form_border{
+    
+
+    background: #fff;
+    padding: 15px;
+    border: 3px solid #505050;
+    margin-bottom: px;
+    border-radius: 30px;
+    margin: 10;
+}

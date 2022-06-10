@@ -3,18 +3,49 @@ include_once './conexao.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Cadastrar usuário</title>
-    </head>
+    <?php
+        include_once './head.php';
+    ?>
 <body>
 
 <?php
 include_once './nav.php';
 ?>
 
+<div class="form_title">
+    <div class="form_border">
+    <h3>Listar</h3>
 
+    <?php
+
+        $query_usuarios = "SELECT id, nome, email FROM usuarios";
+        $result_usuarios = $conn->prepare($query_usuarios);
+        $result_usuarios->execute();
+
+        if(($result_usuarios) AND ($result_usuarios->rowCount() != 0)){
+            while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
+                //var_dump($row_usuario);
+                extract($row_usuario);
+                //echo "ID: " . $row_usuario['id'] . "<BR>";
+                echo "ID: $id <br>";
+                echo "Nome: $nome <br>";
+                echo "E-mail: $email <br>";
+                echo "<hr>";
+            }
+        }else{
+            echo "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!</p>";
+        }
+
+    ?>
+
+
+
+    </div>
+</div>
+<br>
+<?php
+include_once './footer.php';
+?>
 
 
 

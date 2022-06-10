@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+<a class="navbar-brand" href="index.php">
     <img src="./img/crud.png" width="220" height="80" class="d-inline-block align-top" alt="CRUD - Usuários">
   </a>
   

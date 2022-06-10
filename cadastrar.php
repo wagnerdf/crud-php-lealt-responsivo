@@ -1,5 +1,6 @@
-<div>
-    <h1>Cadastrar</h1>
+<div class="form_title">
+    <div class="form_border">
+    <h3>Cadastrar</h3>
     <?php
         //Recebe os dados do formulário
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -51,4 +52,5 @@
 
         <input type="submit" value="cadastrar" name="cadUser">
     </form>
+    </div>
 </div>

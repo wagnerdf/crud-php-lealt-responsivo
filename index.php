@@ -3,11 +3,9 @@ include_once './conexao.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Cadastrar usuário</title>
-    </head>
+<?php
+include_once './head.php';
+?>
 <body>
 
 <?php
@@ -17,8 +15,11 @@ include_once './nav.php';
 <?php
 include_once './cadastrar.php';
 ?>
-
-
+<br>
+<br>
+<?php
+include_once './footer.php';
+?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
