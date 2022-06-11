@@ -27,8 +27,9 @@
                 $cad_usuario->bindParam(':email', $dados['email'], PDO::PARAM_STR);
                 $cad_usuario->execute();
             if($cad_usuario->rowCount()){
-                echo "<p style='color: green;'>Usuário cadastrado com sucesso!</p>";
                 unset($dados);
+                $_SESSION['msg'] = "<p style='color: green;'>Usuário cadastrado com sucesso!</p>";
+                header("Location: listar.php");
             }else{
                 echo "<p style='color: #f00;'>Erro: Usuário não cadastrado!</p>";
             }
