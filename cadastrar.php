@@ -1,3 +1,8 @@
+<?php
+session_start();
+ob_start();
+?>
+
 <div class="form_title">
     <div class="form_border">
     <h3>Cadastrar</h3>

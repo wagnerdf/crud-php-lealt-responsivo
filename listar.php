@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once './conexao.php';
 ?>
 <!DOCTYPE html>
@@ -29,7 +30,7 @@ include_once './nav.php';
         //var_dump($pagina);
 
         //Setar a quantidade de registros por páginas
-        $limite_resultado = 2;
+        $limite_resultado = 3;
 
         //Calcular o inicio da visualização
         $inicio = ($limite_resultado * $pagina) - $limite_resultado;
@@ -50,38 +51,36 @@ include_once './nav.php';
                 echo "<hr>";
             }
             // Contar a quantidade de registro no BD
-            $query_qnt_registros = "SELECT COUNT (id) AS num_result FROM usuarios";
+            $query_qnt_registros = "SELECT COUNT(*) AS num_result FROM usuarios";
             $result_qnt_registros =  $conn->prepare($query_qnt_registros);
             $result_qnt_registros->execute();
             $row_qnt_registros = $result_qnt_registros->fetch(PDO::FETCH_ASSOC);
-
-            //Quantidade de página
             
-            //if (is_array($row_qnt_registros)){
+            //Quantidade de página
             $qnt_pagina = ceil($row_qnt_registros['num_result'] / $limite_resultado);
-            //}
+
 
             //Maximo de link
             $maximo_link = 2;
 
-            echo "<a href='listar.php?page=1'>Primeira</a>";
+            echo "<a href='listar.php?page=1'>Primeira </a>";
 
             for($pagina_anterior = $pagina - $maximo_link; $pagina_anterior <= $pagina - 1; $pagina_anterior ++){
                 if($pagina_anterior >= 1){
-                    echo "<a href='listar.php?page=$pagina_anterior'>$pagina_anterior</a>";
+                    echo "<a href='listar.php?page=$pagina_anterior'> $pagina_anterior </a>";
                 }
             }
 
 
-            echo "<a href=''>$pagina</a>";
+            echo "<a href=''> $pagina </a>";
 
             for($proxima_pagina = $pagina + 1; $proxima_pagina <= $pagina + $maximo_link; $proxima_pagina++){
                 if($proxima_pagina <= $qnt_pagina){     
-                    echo "<a href='listar.php?page=$proxima_pagina'>$proxima_pagina</a>";
+                    echo "<a href='listar.php?page=$proxima_pagina'> $proxima_pagina </a>";
                 }
             }
 
-            echo "<a href='listar.php?page=$qnt_pagina'>Última</a>";
+            echo "<a href='listar.php?page=$qnt_pagina'> Última</a>";
 
         }else{
             echo "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!</p>";
