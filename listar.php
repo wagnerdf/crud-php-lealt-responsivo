@@ -49,8 +49,11 @@ include_once './nav.php';
                 echo "Nome: $nome <br>";
                 echo "E-mail: $email <br>";
 
-                echo "<a href='visualizar.php?id=$id'>Visualizar</a><br>";
-                echo "<a href='editar.php?id=$id'>Editar</a><br>";
+                echo "<a href='listar.php?id=$id'>Visualizar</a><br>";
+                echo "<a href='editar.php?id=$id'>Editar</a>";
+                echo "  -  ";
+                echo "<a href='apagar.php?id=$id'>Apagar</a><br>";
+                
 
                 echo "<hr>";
             }
