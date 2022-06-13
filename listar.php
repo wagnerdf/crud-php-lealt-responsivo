@@ -30,7 +30,7 @@ include_once './nav.php';
         //var_dump($pagina);
 
         //Setar a quantidade de registros por páginas
-        $limite_resultado = 3;
+        $limite_resultado = 40;
 
         //Calcular o inicio da visualização
         $inicio = ($limite_resultado * $pagina) - $limite_resultado;
@@ -49,7 +49,7 @@ include_once './nav.php';
                 echo "Nome: $nome <br>";
                 echo "E-mail: $email <br>";
 
-                echo "<a href='listar.php?id=$id'>Visualizar</a><br>";
+                echo "<a href='visualizar.php?id=$id'>Visualizar</a><br>";
                 echo "<a href='editar.php?id=$id'>Editar</a>";
                 echo "  -  ";   
                 echo "<a onclick='deleteProfile($id);' href='#'>Apagar</a>";
