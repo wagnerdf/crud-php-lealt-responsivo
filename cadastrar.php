@@ -50,7 +50,7 @@ ob_start();
         ?>"><br><br>
         
         <label>E-mail: </label>
-        <input type="email" name="email" id="email" placeholder="Seu melhor e-mail"value="<?php
+        <input type="email" name="email" id="email" placeholder="Seu melhor e-mail" value="<?php
             if(isset($dados['email'])){
                 echo $dados['email'];
             }

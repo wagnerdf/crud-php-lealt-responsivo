@@ -30,7 +30,7 @@ include_once './nav.php';
         //var_dump($pagina);
 
         //Setar a quantidade de registros por páginas
-        $limite_resultado = 40;
+        $limite_resultado = 4;
 
         //Calcular o inicio da visualização
         $inicio = ($limite_resultado * $pagina) - $limite_resultado;
