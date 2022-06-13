@@ -51,9 +51,8 @@ include_once './nav.php';
 
                 echo "<a href='listar.php?id=$id'>Visualizar</a><br>";
                 echo "<a href='editar.php?id=$id'>Editar</a>";
-                echo "  -  ";
-                echo "<a href='apagar.php?id=$id'>Apagar</a><br>";
-                
+                echo "  -  ";   
+                echo "<a onclick='deleteProfile($id);' href='#'>Apagar</a>";
 
                 echo "<hr>";
             }
@@ -103,6 +102,17 @@ include_once './nav.php';
 <?php
 include_once './footer.php';
 ?>
+
+<script>
+  //Mensagem de confirmação e redirecionamento para o script de exclusão de usuário
+  function deleteProfile($id) {
+    if (confirm("Você realmente deseja excluir o usuário?")) {
+        location.href = 'apagar.php?id='+$id;
+    }
+}
+</script>
+
+
 
 </body>
 </html>
