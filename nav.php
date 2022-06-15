@@ -16,11 +16,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="listar.php">listar <span class="sr-only">(página atual)</span></a>
       </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="mensagem.php">Mensagem <span class="sr-only">(página atual)</span></a>
+      </li>
       
 
     </ul>
     <form action="visualizar.php" class="form-inline my-2 my-lg-0" name="pesquisar-user" method="GET" action="">
-      <input class="form-control mr-sm-2" type="search" name="pesquisarUsuario" id="pesquisarUsuario" placeholder="Pesquisar" aria-label="Pesquisar">
+      <input class="form-control mr-sm-2" type="search" name="pesquisarUsuario" id="pesquisarUsuario" placeholder="Pesquisar usuários" aria-label="Pesquisar">
       <button class="btn btn-outline-success my-2 my-sm-0">Pesquisar usuário</button>
     </form>
   </div>

@@ -14,7 +14,7 @@ if(empty($id) AND empty($pesquisa)){
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <?php
         include_once './head.php';
     ?>
@@ -63,11 +63,7 @@ include_once './nav.php';
                 echo "Nome: $nome <br>";
                 echo "E-mail: $email <br>";
                 echo "<hr>";
-            }
-
-
-
-            
+            } 
         }else{
             $_SESSION['msg'] = "<p style='color: #f00;'>Dados da pesquisa não encontrado</p>";
             header("Location: listar.php");

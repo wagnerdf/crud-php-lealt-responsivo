@@ -3,7 +3,7 @@ session_start();
 include_once './conexao.php';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <?php
         include_once './head.php';
     ?>

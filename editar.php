@@ -28,7 +28,7 @@ if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <?php
         include_once './head.php';
     ?>
