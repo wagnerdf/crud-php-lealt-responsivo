@@ -74,23 +74,32 @@ include_once './nav.php';
     ?>
 
     <form id="editar-usuario" method="POST" action="">
-        <label>Nome: </label>
-        <input type="text" name="nome" id="nome" placeholder="Nome completo" value="<?php 
-        if(isset($dados['nome'])){
-            echo $dados['nome'];
-        }elseif (isset($row_usuario['nome'])){
-             echo $row_usuario['nome']; 
-        } 
-        ?>" required><br><br> 
 
-        <label>E-mail: </label>
-        <input type="email" name="email" id="email" placeholder="Seu melhor e-mail" value="<?php 
-         if(isset($dados['email'])){
-            echo $dados['email'];
-        }elseif (isset($row_usuario['email'])){
-             echo $row_usuario['email']; 
-        }
-        ?>" required><br><br>
+
+        <div class="form-group row col-md-5 mb-3">
+            <label for="inputNome" class="col-sm-2 col-form-label">Nome: </label>
+            <div class="col-sm-10">
+            <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome completo" value="<?php 
+              if(isset($dados['nome'])){
+              echo $dados['nome'];
+               }elseif (isset($row_usuario['nome'])){
+                echo $row_usuario['nome']; 
+               } 
+        ?>" required autofocus>
+            </div>
+        </div>
+
+        <div class="form-group row col-md-5 mb-3">
+            <label for="inputEmail" class="col-sm-2 col-form-label">E-mail: </label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="email" placeholder="O melhor e-mail" value="<?php 
+                 if(isset($dados['email'])){
+                   echo $dados['email'];
+                    }elseif (isset($row_usuario['email'])){
+                    echo $row_usuario['email']; 
+                }?>" required>
+            </div>
+        </div>
 
         <input type="submit" value="Salvar" name="EditUsuario" class="btn btn-success">
         <input type="button" value="Cancelar" name="CancelEdit" onclick="listar()" class="btn btn-primary">

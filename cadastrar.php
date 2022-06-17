@@ -42,20 +42,28 @@ ob_start();
         }
     ?>
     <form name="cad-user" method="POST" action="">
-        <label>Nome: </label>
-        <input type="text" name="nome" id="nome" placeholder="Nome completo" value="<?php
+
+        <div class="form-group row col-md-5 mb-3">
+                    <label for="inputNome" class="col-sm-2 col-form-label">Nome: </label>
+                    <div class="col-sm-10">
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome completo" value="<?php
             if(isset($dados['nome'])){
                 echo $dados['nome'];
             }
-        ?>"><br><br>
-        
-        <label>E-mail: </label>
-        <input type="email" name="email" id="email" placeholder="Seu melhor e-mail" value="<?php
+        ?>" required autofocus>
+                    </div>
+        </div>
+
+        <div class="form-group row col-md-5 mb-3">
+            <label for="inputEmail" class="col-sm-2 col-form-label">E-mail: </label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="email" placeholder="O melhor e-mail" value="<?php
             if(isset($dados['email'])){
                 echo $dados['email'];
             }
-        ?>"><br><br>
-
+        ?>" required>
+            </div>
+        </div>
         <div class="form-group row col-md-5 mb-3">
             <input type="submit" value="Cadastrar" name="cadUser" class="btn btn-primary">
         </div>
