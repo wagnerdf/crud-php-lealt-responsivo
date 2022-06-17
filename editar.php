@@ -19,7 +19,7 @@ $result_usuario->execute();
 
 if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
     $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-    var_dump($row_usuario);
+    //var_dump($row_usuario);
 }else{
     $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
     header("Location: listar.php");
@@ -92,8 +92,9 @@ include_once './nav.php';
         }
         ?>" required><br><br>
 
-        <input type="submit" value="Salvar" name="EditUsuario">
-
+        <input type="submit" value="Salvar" name="EditUsuario" class="btn btn-success">
+        <input type="button" value="Cancelar" name="CancelEdit" onclick="listar()" class="btn btn-primary">
+        
     </form>
     </div>
 </div>
@@ -102,7 +103,12 @@ include_once './nav.php';
 include_once './footer.php';
 ?>
 
+<script>
+ function listar(){
+    location.href = 'listar.php';
+ }
 
+</script>
 
 
 

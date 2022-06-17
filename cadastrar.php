@@ -56,7 +56,10 @@ ob_start();
             }
         ?>"><br><br>
 
-        <input type="submit" value="cadastrar" name="cadUser">
+        <div class="form-group row col-md-5 mb-3">
+            <input type="submit" value="Cadastrar" name="cadUser" class="btn btn-primary">
+        </div>
+        
     </form>
     </div>
 </div>

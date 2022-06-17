@@ -53,8 +53,8 @@ include_once './head.php';
                         $mail->isSMTP();                                            //Send using SMTP
                         $mail->Host       = 'smtp.mailtrap.io';                     //Set the SMTP server to send through
                         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                        $mail->Username   = '849d35ad87f650';                     //SMTP username
-                        $mail->Password   = '9ff052ddd4e1e4';                               //SMTP password
+                        $mail->Username   = 'admin';                     //SMTP username
+                        $mail->Password   = '**********';                               //SMTP password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
                         $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                         
