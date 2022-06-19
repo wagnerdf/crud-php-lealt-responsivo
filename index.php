@@ -44,7 +44,6 @@ switch ($pagina) {
     case 'default':
         include 'app/Views/cadastrar.php';
         break;
-
 }
 
 include_once 'app/Views/footer.php';

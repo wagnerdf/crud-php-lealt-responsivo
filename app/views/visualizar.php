@@ -2,10 +2,10 @@
 ob_start();
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-$pesquisa = filter_input(INPUT_GET, "pesquisarUsuario");
+$pesquisa = filter_input(INPUT_GET, "pesquisa");
 
-var_dump($id);
-var_dump($pesquisa);
+//var_dump($id);
+//var_dump($pesquisa);
 
 
 if(empty($id) AND empty($pesquisa)){
@@ -30,7 +30,7 @@ if(empty($id) AND empty($pesquisa)){
 
         if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
             $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-            // echo "<pre>", var_dump($row_usuario), "</pre>";
+            //echo "<pre>", var_dump($row_usuario), "</pre>";
             extract($row_usuario);
             //echo "ID: " . $row_usuario['id'] . "<br>";
             echo "ID: $id <br>";
