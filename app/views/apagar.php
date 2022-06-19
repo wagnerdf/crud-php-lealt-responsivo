@@ -9,7 +9,7 @@ var_dump($id);
 
 if(empty($id)){
     $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-    header("Location: listar.php");
+    header("Location: ?i=listar");
     exit();
 }
 
@@ -24,16 +24,16 @@ if(empty($id)){
         if($apagar_usuario->execute()){
 
             $_SESSION['msg'] = "<p style='color: green;'>Usuário apagado com sucesso!</p>";
-            header("Location: listar.php");
+            header("Location: ?i=listar");
         }else{
             
             $_SESSION['msg'] = "<p style='color: #f00;'>Usuário não apagado!</p>";
-            header("Location: listar.php");
+            header("Location: ?i=listar");
         }
 
     }else{
         $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-        header("Location: listar.php");
+        header("Location: ?i=listar");
     }
 
 ?>

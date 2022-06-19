@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-include_once './conexao.php';
+//include_once './conexao.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
@@ -9,7 +9,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if(empty($id)){
     $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-    header("Location: listar.php");
+    header("Location: ?i=listar");
     exit();
 }
 
@@ -22,20 +22,10 @@ if(($result_usuario) AND ($result_usuario->rowCount() != 0)){
     //var_dump($row_usuario);
 }else{
     $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-    header("Location: listar.php");
+    header("Location: ?i=listar");
     exit();
 }
 
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <?php
-        include_once './head.php';
-    ?>
-<body>
-
-<?php
-include_once './nav.php';
 ?>
 
 <div class="form_title">
@@ -65,7 +55,7 @@ include_once './nav.php';
            $edit_usuario->bindParam(':id', $id, PDO::PARAM_INT);
            if($edit_usuario->execute()){
             $_SESSION['msg'] = "<p style='color: green;'>Usuário editado com sucesso!</p>";
-                header("Location: listar.php");
+                header("Location: ?i=listar");
            }else{
                 echo "<p style='color: #f00;'>Erro: Usuário não editado com sucesso!</p>";
            }
@@ -108,18 +98,3 @@ include_once './nav.php';
     </div>
 </div>
 <br>
-<?php
-include_once './footer.php';
-?>
-
-<script>
- function listar(){
-    location.href = 'listar.php';
- }
-
-</script>
-
-
-
-</body>
-</html>

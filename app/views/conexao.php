@@ -10,7 +10,7 @@ $port = 3306;
 try{
 
     $conn = new PDO("mysql:host=$host;port=$port;dbname=".$dbname, $user, $pass);
-
+    //echo "OK: Conexão com banco de dados realizada!";
 } catch (Exception $ex){
     echo "Erro: Conexão com banco de dados não realizada!";
 }

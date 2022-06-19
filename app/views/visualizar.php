@@ -1,27 +1,19 @@
 <?php
-session_start();
 ob_start();
-include_once './conexao.php';
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 $pesquisa = filter_input(INPUT_GET, "pesquisarUsuario");
 
+var_dump($id);
+var_dump($pesquisa);
+
+
 if(empty($id) AND empty($pesquisa)){
    $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-   header("Location: listar.php");
+   header("Location: ?i=listar");
    exit();
 }
 
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <?php
-        include_once './head.php';
-    ?>
-<body>
-
-<?php
-include_once './nav.php';
 ?>
 
 <div class="form_title">
@@ -47,7 +39,7 @@ include_once './nav.php';
 
         }else{
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
-            header("Location: listar.php");
+            header("Location: ?i=listar");
         }
     }
 
@@ -66,7 +58,7 @@ include_once './nav.php';
             } 
         }else{
             $_SESSION['msg'] = "<p style='color: #f00;'>Dados da pesquisa não encontrado</p>";
-            header("Location: listar.php");
+            header("Location: ?i=listar");
         }
 
 
@@ -75,13 +67,3 @@ include_once './nav.php';
     ?>
     </div>
 </div>
-<br>
-
-<?php
-    include_once './footer.php';
-?>
-
-
-
-</body>
-</html>

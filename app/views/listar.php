@@ -1,17 +1,8 @@
 <?php
-session_start();
-include_once './conexao.php';
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-    <?php
-        include_once './head.php';
-    ?>
-<body>
+//session_start();
 
-<?php
-include_once './nav.php';
 ?>
+
 
 <div class="form_title">
     <div class="form_border">
@@ -49,9 +40,9 @@ include_once './nav.php';
                 echo "Nome: $nome <br>";
                 echo "E-mail: $email <br>";
 
-                echo "<a href='visualizar.php?id=$id'>Visualizar</a>";
+                echo "<a href='?i=visualizar&id=$id'>Visualizar</a>";
                 echo "  -  "; 
-                echo "<a href='editar.php?id=$id'>Editar</a>";
+                echo "<a href='?i=editar&id=$id'>Editar</a>";
                 echo "  -  ";   
                 echo "<a onclick='deleteProfile($id);' href='#'>Apagar</a>";
 
@@ -70,11 +61,11 @@ include_once './nav.php';
             //Maximo de link
             $maximo_link = 2;
 
-            echo "<a href='listar.php?page=1'>Primeira </a>";
+            echo "<a href='?i=listar&page=1'>Primeira </a>";
 
             for($pagina_anterior = $pagina - $maximo_link; $pagina_anterior <= $pagina - 1; $pagina_anterior ++){
                 if($pagina_anterior >= 1){
-                    echo "<a href='listar.php?page=$pagina_anterior'> $pagina_anterior </a>";
+                    echo "<a href='?i=listar&page=$pagina_anterior'> $pagina_anterior </a>";
                 }
             }
 
@@ -83,11 +74,11 @@ include_once './nav.php';
 
             for($proxima_pagina = $pagina + 1; $proxima_pagina <= $pagina + $maximo_link; $proxima_pagina++){
                 if($proxima_pagina <= $qnt_pagina){     
-                    echo "<a href='listar.php?page=$proxima_pagina'> $proxima_pagina </a>";
+                    echo "<a href='?i=listar&page=$proxima_pagina'> $proxima_pagina </a>";
                 }
             }
 
-            echo "<a href='listar.php?page=$qnt_pagina'> Última</a>";
+            echo "<a href='?i=listar&page=$qnt_pagina'> Última</a>";
 
         }else{
             echo "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!</p>";
@@ -99,21 +90,3 @@ include_once './nav.php';
 
     </div>
 </div>
-<br>
-<?php
-include_once './footer.php';
-?>
-
-<script>
-  //Mensagem de confirmação e redirecionamento para o script de exclusão de usuário
-  function deleteProfile($id) {
-    if (confirm("Você realmente deseja excluir o usuário?")) {
-        location.href = 'apagar.php?id='+$id;
-    }
-}
-</script>
-
-
-
-</body>
-</html>

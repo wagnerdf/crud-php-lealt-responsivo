@@ -5,21 +5,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include_once './conexao.php';
-//Load Composer's autoloader
-require './lib/vendor/autoload.php';
+
+require 'app/lib/vendor/autoload.php';
 
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<?php
-include_once './head.php';
-?>
-
-<body>
-    <?php
-    include_once './nav.php';
-    ?>
 
     <div class="form_title">
         <div class="form_border">
@@ -135,17 +124,7 @@ include_once './head.php';
                 <div class="form-group row col-md-5 mb-3">
                     <input type="submit" value="Enviar" name="SendAddMsg" class="btn btn-primary">
                 </div>
-
-
             </form>
 
         </div>
     </div>
-    <br>
-    <?php
-    include_once './footer.php';
-    ?>
-
-</body>
-
-</html>
